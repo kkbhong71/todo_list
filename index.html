@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <meta name="description" content="현대적이고 귀여운 할 일 관리 앱">
+    <title>✨ 트렌디 투두 앱 ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🌸 투두 가든 🌸</h1>
+            <p class="subtitle">꽃처럼 피어나는 하루하루 💕</p>
+        </header>
+
+        <section class="input-section" aria-label="새 할 일 추가">
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    placeholder="오늘의 작은 꿈을 적어보세요 🌺" 
+                    maxlength="100"
+                    aria-label="할 일 입력"
+                    autocomplete="off"
+                >
+                <button id="addBtn" class="add-btn" aria-label="할 일 추가" title="할 일 추가 (Enter)">
+                    <span>✚</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="stats" aria-label="할 일 통계">
+            <div class="stat-item">
+                <span class="stat-number" id="totalTasks" aria-label="전체 할 일 개수">0</span>
+                <span class="stat-label">전체</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="completedTasks" aria-label="완료된 할 일 개수">0</span>
+                <span class="stat-label">완료</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="pendingTasks" aria-label="남은 할 일 개수">0</span>
+                <span class="stat-label">진행중</span>
+            </div>
+        </section>
+
+        <!-- 달력 섹션 - 완전히 재구성 -->
+        <section class="calendar-section" aria-label="달력">
+            <!-- 뷰 선택 버튼과 네비게이션 통합 -->
+            <div class="calendar-controls">
+                <div class="view-selector">
+                    <button id="weekView" class="view-btn active" aria-label="주간 뷰">주간</button>
+                    <button id="monthView" class="view-btn" aria-label="월간 뷰">월간</button>
+                    <button id="yearView" class="view-btn" aria-label="연간 뷰">연간</button>
+                </div>
+                <div class="calendar-header">
+                    <button id="prevPeriod" class="calendar-nav" aria-label="이전 기간">‹</button>
+                    <h3 id="currentPeriod" class="calendar-title">2025년 8월</h3>
+                    <button id="nextPeriod" class="calendar-nav" aria-label="다음 기간">›</button>
+                </div>
+            </div>
+
+            <!-- 주간 뷰 컨테이너 -->
+            <div id="weekViewContainer" class="calendar-container">
+                <div class="week-days">
+                    <div class="week-day">일</div>
+                    <div class="week-day">월</div>
+                    <div class="week-day">화</div>
+                    <div class="week-day">수</div>
+                    <div class="week-day">목</div>
+                    <div class="week-day">금</div>
+                    <div class="week-day">토</div>
+                </div>
+                <div id="weekGrid" class="week-grid">
+                    <!-- 주간 날짜들이 여기에 동적으로 생성됩니다 -->
+                </div>
+            </div>
+
+            <!-- 월간 뷰 컨테이너 -->
+            <div id="monthViewContainer" class="calendar-container hidden">
+                <div class="calendar-weekdays">
+                    <div class="weekday">일</div>
+                    <div class="weekday">월</div>
+                    <div class="weekday">화</div>
+                    <div class="weekday">수</div>
+                    <div class="weekday">목</div>
+                    <div class="weekday">금</div>
+                    <div class="weekday">토</div>
+                </div>
+                <div id="monthGrid" class="calendar-grid">
+                    <!-- 월간 달력 날짜들이 여기에 동적으로 생성됩니다 -->
+                </div>
+            </div>
+
+            <!-- 연간 뷰 컨테이너 -->
+            <div id="yearViewContainer" class="calendar-container hidden">
+                <div id="yearGrid" class="year-grid">
+                    <!-- 연간 달력이 여기에 동적으로 생성됩니다 -->
+                </div>
+            </div>
+
+            <!-- 오늘 버튼과 선택된 날짜 표시 -->
+            <div class="date-selector">
+                <button id="todayBtn" class="today-btn">오늘</button>
+                <span id="selectedDate" class="selected-date">전체 할 일</span>
+            </div>
+        </section>
+
+        <main class="todo-section" aria-label="할 일 목록">
+            <ul id="todoList" class="todo-list" role="list">
+                <!-- 할 일 목록이 여기에 동적으로 추가됩니다 -->
+            </ul>
+            
+            <div id="emptyState" class="empty-state" role="status" aria-live="polite">
+                <div class="empty-icon">🌸</div>
+                <p>아직 꽃봉오리가 없어요!</p>
+                <p>위에서 새로운 꿈을 심어보세요 🌱</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>오늘도 예쁜 하루 되세요! 🌸</p>
+        </footer>
+    </div>
+
+    <!-- 상태 업데이트용 라이브 영역 (접근성) -->
+    <div aria-live="polite" aria-atomic="true" class="sr-only" id="statusUpdates"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
