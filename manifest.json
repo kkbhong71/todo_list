@@ -1,0 +1,44 @@
+{
+  "name": "할 일 관리 Pro",
+  "short_name": "할 일 관리",
+  "description": "고급 기능을 포함한 직관적인 할 일 관리 앱",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F4FF",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "ko",
+  "dir": "ltr",
+  "categories": ["productivity", "utilities", "lifestyle"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='32' fill='%23667eea'/%3E%3Cpath d='M64 80h64v8H64zm0 24h48v8H64zm0 24h56v8H64z' fill='%23fff'/%3E%3Ccircle cx='144' cy='144' r='24' fill='%23FFB6C1'/%3E%3Cpath d='M136 144h16m-8-8v16' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='84' fill='%23667eea'/%3E%3Cpath d='M128 160h256v16H128zm0 48h208v16H128zm0 48h240v16H128z' fill='%23fff'/%3E%3Ccircle cx='384' cy='384' r='48' fill='%23FFB6C1'/%3E%3Cpath d='M352 384h64m-32-32v64' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "새 할 일 추가",
+      "short_name": "새 할 일",
+      "description": "빠르게 새로운 할 일을 추가합니다",
+      "url": "/?action=add"
+    },
+    {
+      "name": "통계 보기",
+      "short_name": "통계",
+      "description": "할 일 완료 통계를 확인합니다",
+      "url": "/?action=stats"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
